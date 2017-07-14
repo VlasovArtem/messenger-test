@@ -13,7 +13,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE"
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE"
     }
 }
 
@@ -21,7 +21,7 @@ apply plugin: "io.spring.dependency-management"
 
 dependencyManagement {
     imports {
-        mavenBom 'io.spring.platform:platform-bom:1.1.1.RELEASE'
+        mavenBom 'io.spring.platform:platform-bom:Athens-SR6'
     }
 }
 
@@ -36,7 +36,7 @@ configurations.all {
 }
 
 jar {
-    baseName = 'gs-gradle'
+    baseName = 'messenger'
     version =  '0.1.0'
 }
 
