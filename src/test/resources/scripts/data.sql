@@ -9,7 +9,8 @@ INSERT INTO comment VALUES
 (2, NOW(), null, 'Hello Jon', 2, 1);
 INSERT INTO like_table VALUES
 (1, NOW(), null, 1, 2),
-(2, NOW(), null, 2, 1);
+(2, NOW(), null, 2, 1),
+(3, NOW(), null, 2, 2);
 INSERT INTO share VALUES
 (1, NOW(), null, 'https://twitter.com', 1),
 (2, NOW(), null, 'https://instagram.com', 2);
