@@ -24,6 +24,9 @@ public class Message extends BaseEntity {
     @JoinColumn(name = "MESSAGE_ID")
     private List<Share> shares;
 
+    public Message() {
+    }
+
     public Message(String title, String body, List<Comment> comments, List<Like> likes, List<Share> shares) {
         this.title = title;
         this.body = body;

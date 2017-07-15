@@ -14,6 +14,9 @@ public class Share extends BaseEntity {
     @Column(name = "SHARE_TO", nullable = false, updatable = false, length = 100)
     private String shareTo;
 
+    public Share() {
+    }
+
     public Share(String shareTo) {
         this.shareTo = shareTo;
     }

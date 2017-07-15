@@ -31,6 +31,9 @@ public class User extends BaseEntity {
     @JoinColumn(name = "USER_ID")
     private List<Like> likes;
 
+    public User() {
+    }
+
     public User(String firstName, String lastName, String email, Sex sex, List<Message> messages, List<Comment> comments, List<Like> likes) {
         this.firstName = firstName;
         this.lastName = lastName;
