@@ -1,35 +1,17 @@
 package org.avlasov.messenger.repository;
 
-import org.avlasov.messenger.config.TestDataSource;
 import org.avlasov.messenger.entity.User;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.SqlGroup;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by artemvlasov on 14/07/2017.
  */
-@RunWith(SpringRunner.class)
-@DataJpaTest
-@ContextConfiguration(classes = TestDataSource.class)
-@SqlGroup({
-        @Sql("/scripts/drop-data.sql"),
-        @Sql("/scripts/data.sql")
-})
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class UserRepositoryTest {
+public class UserRepositoryTest extends MainRepositoryTest {
 
     @Autowired
     private UserRepository userRepository;
