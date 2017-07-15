@@ -1,5 +1,5 @@
-DROP TABLE share;
-DROP TABLE like_table;
-DROP TABLE comment;
-DROP TABLE message;
-DROP TABLE user;
+DELETE FROM share;
+DELETE FROM like_table;
+DELETE FROM comment;
+DELETE FROM message;
+DELETE FROM user;
