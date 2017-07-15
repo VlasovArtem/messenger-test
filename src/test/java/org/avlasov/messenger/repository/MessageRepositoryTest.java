@@ -33,28 +33,28 @@ public class MessageRepositoryTest extends MainRepositoryTest {
     }
 
     @Test
-    public void findByTitleLike_WithMatchingTitle_ReturnMessagesCollection() throws Exception {
-        List<Message> messages = messageRepository.findByTitleLike("%Message%");
+    public void findByTitleContaining_WithMatchingTitle_ReturnMessagesCollection() throws Exception {
+        List<Message> messages = messageRepository.findByTitleContaining("Message");
         assertFalse(messages.isEmpty());
         assertThat(messages, IsCollectionWithSize.hasSize(2));
     }
 
     @Test
-    public void findByTitleLike_WithNotMatchingTitle_ReturnEmptyCollection() throws Exception {
-        List<Message> messages = messageRepository.findByTitleLike("Test");
+    public void findByTitleContaining_WithNotMatchingTitle_ReturnEmptyCollection() throws Exception {
+        List<Message> messages = messageRepository.findByTitleContaining("Test");
         assertTrue(messages.isEmpty());
     }
 
     @Test
-    public void findByBodyLike_WithMatchingBody_ReturnMessagesCollection() throws Exception {
-        List<Message> messages = messageRepository.findByBodyLike("%Jane Doe%");
+    public void findByBodyContaining_WithMatchingBody_ReturnMessagesCollection() throws Exception {
+        List<Message> messages = messageRepository.findByBodyContaining("Jane Doe");
         assertFalse(messages.isEmpty());
         assertThat(messages, IsCollectionWithSize.hasSize(1));
     }
 
     @Test
-    public void findByBodyLike_WithNotMatchingBody_ReturnEmptyCollection() throws Exception {
-        List<Message> messages = messageRepository.findByBodyLike("Test");
+    public void findByBodyContaining_WithNotMatchingBody_ReturnEmptyCollection() throws Exception {
+        List<Message> messages = messageRepository.findByBodyContaining("Test");
         assertTrue(messages.isEmpty());
     }
 

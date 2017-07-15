@@ -13,8 +13,8 @@ import java.util.Optional;
 public interface MessageRepository extends JpaRepository<Message, Integer> {
 
     Optional<Message> findByTitle(String title);
-    List<Message> findByTitleLike(String title);
-    List<Message> findByBodyLike(String body);
+    List<Message> findByTitleContaining(String title);
+    List<Message> findByBodyContaining(String body);
     @Query("SELECT u.messages FROM User u WHERE u.id = ?1")
     List<Message> findAuthorMessages(int authorId);
     boolean existsByTitle(String title);
